@@ -32,10 +32,10 @@ build(){
 }
 
 get_gui(){
-    wget https://github.com/txthinking/brook/releases/latest/download/Brook.dmg -o ./${version}/Brook.dmg
-    wget https://github.com/txthinking/brook/releases/latest/download/BrookLite.exe -o ./${version}/BrookLite.exe
-    # wget https://github.com/txthinking/brook/releases/latest/download/
-    # wget https://github.com/txthinking/brook/releases/latest/download/
+    wget https://github.com/txthinking/brook/releases/latest/download/Brook.dmg -O ./${version}/Brook.dmg
+    wget https://github.com/txthinking/brook/releases/latest/download/BrookLite.exe -O ./${version}/BrookLite.exe
+    # wget https://github.com/txthinking/brook/releases/latest/download/Brook.apk -O Brook.apk
+    # wget https://github.com/txthinking/brook/releases/latest/download/Brook.exe -O Brook.exe
 }
 
 update(){
