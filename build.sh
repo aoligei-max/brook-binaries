@@ -32,8 +32,8 @@ build(){
 }
 
 get_gui(){
-    wget https://github.com/txthinking/brook/releases/latest/download/Brook.dmg
-    wget https://github.com/txthinking/brook/releases/latest/download/BrookLite.exe
+    wget https://github.com/txthinking/brook/releases/latest/download/Brook.dmg -o ./${version}/Brook.dmg
+    wget https://github.com/txthinking/brook/releases/latest/download/BrookLite.exe -o ./${version}/BrookLite.exe
     # wget https://github.com/txthinking/brook/releases/latest/download/
     # wget https://github.com/txthinking/brook/releases/latest/download/
 }
@@ -51,6 +51,7 @@ mkdir ${version}
 
 git clone $repo && cd brook
 build "./cli/brook"
+cd ..
 get_gui
 update
 
