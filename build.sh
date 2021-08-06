@@ -47,6 +47,7 @@ update(){
 }
 
 set -ex
+[[ -d ${version} ]] && rm -rf ${version}
 mkdir ${version}
 
 git clone $repo && cd brook
