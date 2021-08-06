@@ -6,7 +6,7 @@ get_releases(){
     links=`curl https://api.github.com/${repo}/releases | grep https://github.com/${repo}/releases/download/${version} | awk '{print $2}'`
     echo links | while read link
     do
-        wget ${link} -O ${version}
+        wget ${link} -O ${version}/
     done
     zip -9 ./${version}/BrookLite.exe.zip ./${version}/BrookLite.exe
 }
