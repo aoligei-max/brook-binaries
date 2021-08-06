@@ -50,7 +50,7 @@ set -ex
 mkdir ${version}
 
 git clone $repo
-build "brook/cli/brook"
+build "./brook/cli/brook"
 get_gui
 update
 
