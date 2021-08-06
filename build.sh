@@ -118,7 +118,7 @@ get_gui(){
     wget https://github.com/txthinking/brook/releases/latest/download/BrookLite.exe -O ./${version}/BrookLite.exe
     # wget https://github.com/txthinking/brook/releases/latest/download/Brook.apk -O Brook.apk
     # wget https://github.com/txthinking/brook/releases/latest/download/Brook.exe -O Brook.exe
-    zip -9 BrookLite.exe.zip BrookLite.exe
+    zip -9 ./${version}/BrookLite.exe.zip ./${version}/BrookLite.exe
 }
 
 update(){
