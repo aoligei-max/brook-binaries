@@ -29,6 +29,88 @@ build(){
     CGO_ENABLED=0 GOOS=openbsd GOARCH=amd64 go build                   -ldflags="-w -s" -o ../${version}/${release_name}_openbsd_amd64 $1
     CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build                   -ldflags="-w -s" -o ../${version}/${release_name}_windows_amd64.exe $1
     CGO_ENABLED=0 GOOS=windows GOARCH=386 go build                     -ldflags="-w -s" -o ../${version}/${release_name}_windows_386.exe $1
+
+    cd ipk
+
+    cp ../../${version}/brook_linux_amd64 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}brook_linux_amd64.ipk
+
+    cp ../../${version}/brook_linux_386 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_386.ipk
+
+    cp ../../${version}/brook_linux_arm64 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_arm64.ipk
+
+    cp ../../${version}/brook_linux_arm7 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_arm7.ipk
+
+    cp ../../${version}/brook_linux_arm6 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_arm6.ipk
+
+    cp ../../${version}/brook_linux_arm5 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_arm5.ipk
+
+    cp ../../${version}/brook_linux_mips data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips.ipk
+
+    cp ../../${version}/brook_linux_mipsle data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mipsle.ipk
+
+    cp ../../${version}/brook_linux_mips_softfloat data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips_softfloat.ipk
+
+    cp ../../${version}/brook_linux_mipsle_softfloat data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mipsle_softfloat.ipk
+
+    cp ../../${version}/brook_linux_mips64 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips64.ipk
+
+    cp ../../${version}/brook_linux_mips64le data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips64le.ipk
+
+    cp ../../${version}/brook_linux_mips64_softfloat data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips64_softfloat.ipk
+
+    cp ../../${version}/brook_linux_mips64le_softfloat data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_mips64le_softfloat.ipk
+
+    cp ../../${version}/brook_linux_ppc64 data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_ppc64.ipk
+
+    cp ../../${version}/brook_linux_ppc64le data/usr/bin/brook
+    gsed -i 's/Architecture: .*/Architecture: all/' ./control/control
+    ./build.sh
+    mv brook.ipk ../../${version}/brook_linux_ppc64le.ipk
 }
 
 get_gui(){
@@ -56,4 +138,3 @@ build "./cli/brook"
 cd ..
 get_gui
 update
-
